@@ -1,7 +1,13 @@
 import React from "react";
 
 const App = () => {
-  return <div className="text-center">App</div>;
+  return (
+    <>
+      <div className="text-center">
+        <h1>App</h1>
+      </div>
+    </>
+  );
 };
 
 export default App;
