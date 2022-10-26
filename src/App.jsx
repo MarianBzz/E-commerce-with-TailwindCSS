@@ -1,11 +1,12 @@
 import React from "react";
+import MainHeader from "./components/navbar/MainHeader";
+import MainProduct from "./components/product/MainProduct";
 
 const App = () => {
   return (
     <>
-      <div className="text-center">
-        <h1>App</h1>
-      </div>
+      <MainHeader />
+      <MainProduct />
     </>
   );
 };
