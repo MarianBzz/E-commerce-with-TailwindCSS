@@ -35,13 +35,13 @@ const SlideProduct = () => {
         <div className="absolute left-0 top-1/2 flex w-full -translate-y-1/2 justify-between px-4">
           <button
             onClick={handleClickPrev}
-            className="flex h-7 w-7 items-center justify-center rounded-full bg-white "
+            className="flex h-8 w-8 items-center justify-center rounded-full bg-white "
           >
             <PrevIcon />
           </button>
           <button
             onClick={handleClickNext}
-            className="flex h-7 w-7 items-center justify-center rounded-full bg-white "
+            className="flex h-8 w-8 items-center justify-center rounded-full bg-white "
           >
             <NextIcon />
           </button>
