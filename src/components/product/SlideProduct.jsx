@@ -30,7 +30,7 @@ const SlideProduct = () => {
         <img
           src={ARRAY_IMGS[index]}
           alt="product image"
-          className="aspect-[16/14]"
+          className="aspect-[16/14] w-full"
         />
         <div className="absolute left-0 top-1/2 flex w-full -translate-y-1/2 justify-between px-4">
           <button
