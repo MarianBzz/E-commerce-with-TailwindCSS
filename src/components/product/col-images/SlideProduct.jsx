@@ -61,13 +61,19 @@ const SlideProduct = ({
         </div>
       </div>
 
-      {ARRAY_IMGS_SMALL.map((img) => (
-        <img
+      {ARRAY_IMGS_SMALL.map((img, i) => (
+        <div
           key={img}
-          src={img}
-          alt="product image"
-          className="hidden md:block md:rounded-md"
-        />
+          onClick={() => setIndex(i)}
+          className="relative cursor-pointer overflow-hidden rounded-md"
+        >
+          <img src={img} alt="product image" className="hidden md:block" />
+          <span
+            className={`absolute top-0 h-full w-full hover:bg-[rgba(255,255,255,0.5)] ${
+              i === index && "bg-[rgba(255,255,255,0.5)]"
+            }`}
+          ></span>
+        </div>
       ))}
     </section>
   );
