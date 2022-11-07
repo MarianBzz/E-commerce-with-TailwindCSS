@@ -1,12 +1,12 @@
 import React from "react";
-import MainHeader from "./components/navbar/MainHeader";
-import MainProduct from "./components/product/MainProduct";
+import IndexHeader from "./components/navbar/IndexHeader";
+import IndexProduct from "./components/product/IndexProduct";
 
 const App = () => {
   return (
     <>
-      <MainHeader />
-      <MainProduct />
+      <IndexHeader />
+      <IndexProduct />
     </>
   );
 };

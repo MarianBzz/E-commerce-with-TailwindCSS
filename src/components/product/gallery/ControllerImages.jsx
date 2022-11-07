@@ -1,5 +1,5 @@
 import React from "react";
-import SlideProduct from "@/components/product/col-images/SlideProduct";
+import SlideProduct from "@/components/product/gallery/SlideProduct";
 import { useState } from "react";
 
 const ControllerImages = ({ ARRAY_IMGS, ARRAY_IMGS_SMALL }) => {

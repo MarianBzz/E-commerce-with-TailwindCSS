@@ -1,6 +1,6 @@
 import React from "react";
-import DetailProduct from "@/components/product/col-detail/DetailProduct";
-import ControllerImages from "@/components/product/col-images/ControllerImages";
+import DetailProduct from "@/components/product/details/DetailProduct";
+import ControllerImages from "@/components/product/gallery/ControllerImages";
 
 import imgProduct1 from "@/assets/images/image-product-1.jpg";
 import imgProduct2 from "@/assets/images/image-product-2.jpg";
@@ -20,7 +20,7 @@ const ARRAY_IMGS_SMALL = [
   imgProductSmall4,
 ];
 
-const MainProduct = () => {
+const IndexProduct = () => {
   return (
     <>
       <main className="md:min-h-[calc(100vh-88px-2px) ] grid grid-cols-1 items-center gap-6 md:container md:mx-auto md:grid-cols-2">
@@ -34,4 +34,4 @@ const MainProduct = () => {
   );
 };
 
-export default MainProduct;
+export default IndexProduct;
