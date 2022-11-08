@@ -23,7 +23,7 @@ const ARRAY_IMGS_SMALL = [
 const IndexProduct = () => {
   return (
     <>
-      <main className="md:min-h-[calc(100vh-88px-2px) ] grid grid-cols-1 items-center gap-6 md:container md:mx-auto md:grid-cols-2">
+      <main className="grid grid-cols-1 items-center gap-6 md:container md:mx-auto md:min-h-[calc(100vh-88px-3px)] md:grid-cols-2 ">
         <ControllerImages
           ARRAY_IMGS={ARRAY_IMGS}
           ARRAY_IMGS_SMALL={ARRAY_IMGS_SMALL}
