@@ -29,7 +29,7 @@ const ControllerImages = ({ ARRAY_IMGS, ARRAY_IMGS_SMALL }) => {
             ARRAY_IMGS_SMALL={ARRAY_IMGS_SMALL}
             isOpenModal={isOpenModal}
             handleCloseModal={handleCloseModal}
-            className="hidden md:absolute md:top-1/2 md:left-1/2 md:z-10 md:grid md:max-w-xl md:-translate-x-1/2 md:-translate-y-1/2 md:grid-cols-4 md:gap-4"
+            className="hidden md:absolute md:top-1/2 md:left-1/2 md:z-10 md:grid md:max-w-lg md:-translate-x-1/2 md:-translate-y-1/2 md:grid-cols-4 md:gap-4 lg:my-10"
           />
           <span
             className="fixed top-0 left-0 h-full w-full bg-black/70"

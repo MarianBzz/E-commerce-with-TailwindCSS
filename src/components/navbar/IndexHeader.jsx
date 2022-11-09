@@ -42,7 +42,7 @@ const IndexHeader = () => {
         <nav
           className={`font-bold md:static md:mr-auto md:flex md:h-auto md:flex-row md:gap-4 md:p-0 ${
             isOpenMenu
-              ? "absolute top-0 left-0 z-10 flex h-full w-4/5 flex-col gap-8 bg-white p-5 md:relative md:mr-auto md:flex md:flex-row md:gap-4"
+              ? "absolute top-0 left-0 z-10 flex h-full w-4/5 flex-col gap-8 p-5 md:relative md:mr-auto md:flex md:flex-row md:gap-4"
               : "hidden"
           }`}
         >
@@ -69,7 +69,7 @@ const IndexHeader = () => {
           <img src={avatar} alt="avatar" className="w-10" />
         </div>
       </header>
-      <span className="container mx-auto hidden h-[1px] w-full bg-gray-500 md:block" />
+      <span className="container mx-auto hidden h-[1px] w-full bg-gray-300 md:block" />
     </>
   );
 };

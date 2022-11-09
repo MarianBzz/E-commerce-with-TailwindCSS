@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import NextIcon from "@/components/icons/NextIcon";
 import PrevIcon from "@/components/icons/PrevIcon";
+import CloseIcon from "@/components/icons/CloseIcon";
 import { useRef } from "react";
 
 const SlideProduct = ({
@@ -30,8 +31,8 @@ const SlideProduct = ({
   return (
     <section className="grid md:grid-cols-4 md:gap-4" {...props}>
       {isOpenModal && (
-        <button onClick={handleCloseModal} className="text-right md:col-span-4">
-          cerrar
+        <button onClick={handleCloseModal} className="ml-auto md:col-span-4">
+          <CloseIcon className="fill-white" />
         </button>
       )}
 
@@ -39,7 +40,7 @@ const SlideProduct = ({
         <img
           src={ARRAY_IMGS[index]}
           alt="product image"
-          className="aspect-[16/14] w-full object-cover md:aspect-[16/16] md:cursor-pointer md:rounded-md xl:aspect-[16/16] 2xl:max-h-[600px]"
+          className="aspect-[16/14] w-full object-cover md:aspect-[16/16] md:cursor-pointer md:rounded-xl xl:aspect-[16/16] 2xl:max-h-[600px]"
           onClick={handleOpenModal}
         />
         <div
@@ -65,12 +66,13 @@ const SlideProduct = ({
         <div
           key={img}
           onClick={() => setIndex(i)}
-          className="relative cursor-pointer overflow-hidden rounded-md"
+          className="relative cursor-pointer overflow-hidden rounded-xl"
         >
           <img src={img} alt="product image" className="hidden md:block" />
           <span
             className={`absolute top-0 h-full w-full hover:bg-[rgba(255,255,255,0.5)] ${
-              i === index && "bg-[rgba(255,255,255,0.5)]"
+              i === index &&
+              "rounded-xl border-2 border-orange-primary bg-[rgba(255,255,255,0.5)]"
             }`}
           ></span>
         </div>
