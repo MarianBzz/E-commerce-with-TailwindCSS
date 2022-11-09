@@ -37,7 +37,7 @@ const objectProduct = {
 const IndexProduct = () => {
   return (
     <>
-      <main className="grid grid-cols-1 items-center gap-6 md:container md:mx-auto md:min-h-[calc(100vh-93px)] md:grid-cols-2 lg:mx-auto lg:min-h-[calc(100vh-93px)] lg:gap-12 lg:py-6 lg:px-20 xl:min-h-[calc(100vh-93px)]">
+      <main className="grid grid-cols-1 items-center gap-6 md:container md:mx-auto md:min-h-[calc(100vh-93px)] md:grid-cols-2 lg:container  lg:mx-auto lg:max-h-[calc(100vh-99px)] lg:gap-12 lg:px-36 xl:min-h-[calc(100vh-93px)]">
         <ControllerImages
           ARRAY_IMGS={objectProduct.mainImages}
           ARRAY_IMGS_SMALL={objectProduct.smallImages}

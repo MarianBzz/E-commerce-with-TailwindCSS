@@ -8,7 +8,7 @@ import { useContext } from "react";
 const CartDetail = () => {
   const { cartProduct, removeProductToCart } = useContext(useCartDetails);
   return (
-    <section className="absolute top-[125%] left-0 z-10 w-full md:left-full md:top-full md:max-w-md md:-translate-x-full">
+    <section className="absolute top-0 left-0 z-10 mt-20 w-full md:left-full md:top-full md:mt-0 md:max-w-md md:-translate-x-full lg:top-full">
       <div className="mx-4 rounded-xl bg-white  shadow-xl">
         <h4 className="px-6 py-6 text-lg font-bold">Cart</h4>
         <hr />

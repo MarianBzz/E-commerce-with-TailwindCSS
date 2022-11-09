@@ -29,14 +29,14 @@ const SlideProduct = ({
   };
 
   return (
-    <section className="grid md:grid-cols-4 md:gap-4" {...props}>
+    <section className="grid md:grid-cols-4 md:gap-4 lg:gap-0 " {...props}>
       {isOpenModal && (
         <button onClick={handleCloseModal} className="ml-auto md:col-span-4">
           <CloseIcon className="fill-white" />
         </button>
       )}
 
-      <div className="relative col-span-4">
+      <div className="relative col-span-4 lg:p-8">
         <img
           src={ARRAY_IMGS[index]}
           alt="product image"
@@ -66,7 +66,7 @@ const SlideProduct = ({
         <div
           key={img}
           onClick={() => setIndex(i)}
-          className="relative cursor-pointer overflow-hidden rounded-xl"
+          className="relative cursor-pointer overflow-hidden rounded-xl lg:mx-0 lg:gap-0 "
         >
           <img src={img} alt="product image" className="hidden md:block" />
           <span
