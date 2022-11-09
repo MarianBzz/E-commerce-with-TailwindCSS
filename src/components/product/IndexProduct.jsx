@@ -13,6 +13,7 @@ import imgProductSmall3 from "@/assets/images/image-product-3-thumbnail.jpg";
 import imgProductSmall4 from "@/assets/images/image-product-4-thumbnail.jpg";
 
 const ARRAY_IMGS = [imgProduct1, imgProduct2, imgProduct3, imgProduct4];
+
 const ARRAY_IMGS_SMALL = [
   imgProductSmall1,
   imgProductSmall2,
@@ -20,15 +21,28 @@ const ARRAY_IMGS_SMALL = [
   imgProductSmall4,
 ];
 
+const objectProduct = {
+  id: 1,
+  title: "Fall Limited Edition Sneakers",
+  description:
+    " These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they ll withstand everything theweather can offer.",
+  company: "Sneaker Company",
+  price: 250,
+  discount: 0.5,
+  finalPrice: 125,
+  mainImages: ARRAY_IMGS,
+  smallImages: ARRAY_IMGS_SMALL,
+};
+
 const IndexProduct = () => {
   return (
     <>
-      <main className="grid grid-cols-1 items-center gap-6 md:container md:mx-auto md:min-h-[calc(100vh-88px-3px)] md:grid-cols-2 ">
+      <main className="grid grid-cols-1 items-center gap-6 md:container md:mx-auto md:min-h-[calc(100vh-88px-3px)] md:grid-cols-2 lg:mx-auto lg:gap-12 lg:py-10 lg:px-20">
         <ControllerImages
-          ARRAY_IMGS={ARRAY_IMGS}
-          ARRAY_IMGS_SMALL={ARRAY_IMGS_SMALL}
+          ARRAY_IMGS={objectProduct.mainImages}
+          ARRAY_IMGS_SMALL={objectProduct.smallImages}
         />
-        <DetailProduct />
+        <DetailProduct objectProduct={objectProduct} />
       </main>
     </>
   );
