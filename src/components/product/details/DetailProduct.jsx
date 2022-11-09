@@ -1,7 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import CartIcon from "@/components/icons/CartIcon.jsx";
+import { useCartDetails } from "@/context/useCartDetails";
+import { useContext } from "react";
 
 const DetailProduct = ({ objectProduct }) => {
+  const { addProductToCart } = useContext(useCartDetails);
+  const [count, setCount] = useState(0);
+
+  const handleAddToCart = () => {
+    if (count === 0) {
+      return alert("Debes sumar al menos un producto");
+    }
+    addProductToCart({
+      img: objectProduct.smallImages[0],
+      id: objectProduct.id,
+      discountPrice: objectProduct.finalPrice.toFixed(2),
+      title: objectProduct.title,
+      quantity: count === 0 ? 1 : count,
+    });
+    setCount(0);
+  };
+
+  const handleIncrement = () => {
+    setCount(count + 1);
+  };
+
+  const handleDecrement = () => {
+    if (count === 0) {
+      return alert("No hay ningún producto seleccionado");
+    } else setCount(count - 1);
+  };
+
   return (
     <section className="container mx-auto px-4 md:px-0">
       <p className="mb-3 font-bold uppercase tracking-wide text-orange-primary">
@@ -20,11 +49,24 @@ const DetailProduct = ({ objectProduct }) => {
       </div>
       <div className="mx-auto grid grid-cols-3 items-center gap-4 font-bold md:grid-cols-[1fr_1.8fr]">
         <div className="col-span-3 flex items-baseline justify-between rounded bg-gray-200 py-2 px-5 pb-3 md:col-span-1">
-          <button className="text-3xl text-orange-primary">-</button>
-          <span className="text-xl">0</span>
-          <button className="text-3xl text-orange-primary">+</button>
+          <button
+            onClick={handleDecrement}
+            className="text-3xl text-orange-primary"
+          >
+            -
+          </button>
+          <span className="text-xl">{count}</span>
+          <button
+            onClick={handleIncrement}
+            className="text-3xl text-orange-primary"
+          >
+            +
+          </button>
         </div>
-        <button className="col-span-3 flex items-center justify-center gap-3 rounded-md bg-orange-primary py-3 text-white transition-all hover:bg-orange-700 md:col-span-1">
+        <button
+          onClick={handleAddToCart}
+          className="col-span-3 flex items-center justify-center gap-3 rounded-md bg-orange-primary py-3 text-white transition-all hover:bg-orange-700 md:col-span-1"
+        >
           <CartIcon className="fill-white" />
           <span>Add to cart</span>
         </button>
