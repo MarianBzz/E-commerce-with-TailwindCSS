@@ -1,16 +1,19 @@
 import React from "react";
 import logo from "@/assets/images/logo.svg";
 import avatar from "@/assets/images/image-avatar.png";
+import { useCartDetails } from "@/context/useCartDetails";
 
 import MenuIcon from "@/components/icons/MenuIcon";
 import CartIcon from "@/components/icons/CartIcon";
 import CloseIcon from "@/components/icons/CloseIcon";
 
-import { useState } from "react";
+import { useState, useContext } from "react";
 import NavLinkHeader from "./NavLinkHeader";
 import CartDetail from "@/components/navbar/CartDetail";
 
 const IndexHeader = () => {
+  const { totalQuantityProduct } = useContext(useCartDetails);
+
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [isOpenCart, setIsOpenCart] = useState(false);
 
@@ -27,7 +30,7 @@ const IndexHeader = () => {
 
   return (
     <>
-      <header className="container relative mx-auto flex items-center gap-4 bg-white p-4 py-4 md:p-0 md:py-0">
+      <header className="container relative mx-auto flex items-center gap-4 bg-white p-4 py-4  md:p-0 md:py-0">
         <button className="md:hidden" onClick={handleOpenMenu}>
           <MenuIcon />
         </button>
@@ -53,8 +56,13 @@ const IndexHeader = () => {
           <NavLinkHeader text="Contact" />
         </nav>
         <div className="flex gap-4">
-          <button onClick={handleOpenCart}>
+          <button className="relative" onClick={handleOpenCart}>
             <CartIcon className="hover:fill-orange-primary" />
+            {totalQuantityProduct !== 0 ? (
+              <span className="absolute top-0 rounded-full bg-orange-primary px-1 text-xs font-bold text-white">
+                {totalQuantityProduct}
+              </span>
+            ) : null}
           </button>
           {isOpenCart && <CartDetail />}
 

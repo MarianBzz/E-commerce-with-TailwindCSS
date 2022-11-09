@@ -25,9 +25,19 @@ export default (props) => {
     setCartProduct(cartProduct.filter((item) => item.id !== id));
   };
 
+  const totalQuantityProduct = cartProduct.reduce(
+    (acc, current) => current.quantity + acc,
+    0
+  );
+
   return (
     <useCartDetails.Provider
-      value={{ cartProduct, addProductToCart, removeProductToCart }}
+      value={{
+        cartProduct,
+        addProductToCart,
+        removeProductToCart,
+        totalQuantityProduct,
+      }}
     >
       {props.children}
     </useCartDetails.Provider>
